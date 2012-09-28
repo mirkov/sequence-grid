@@ -1,4 +1,4 @@
-(in-package :sequences)
+(in-package :sequence-grid)
 
 (defparameter *array-type*
   #+clisp 'array

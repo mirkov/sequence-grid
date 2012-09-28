@@ -8,7 +8,7 @@
   :depends-on (#:alexandria
                #:map-grid-utils
                #:lisp-unit)
-  :components ((:file "sequences-package-def")
+  :components ((:file "sequence-grid-package-def")
                (:file "setup")
 	       (:file "integer-sequences")
 	       (:file "float-sequences")))

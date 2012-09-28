@@ -1,6 +1,6 @@
 ;;;; sequences.lisp
 
-(in-package #:sequences)
+(in-package #:sequence-grid)
 
 ;;; "sequences" goes here. Hacks and glory await!
 

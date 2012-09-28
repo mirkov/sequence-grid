@@ -1,4 +1,4 @@
-(in-package :sequences)
+(in-package :sequence-grid)
 
 (define-test linear
   (assert-numerical-equal
