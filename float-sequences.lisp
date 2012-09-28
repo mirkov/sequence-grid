@@ -1,14 +1,14 @@
 (in-package :sequences)
 
-(define-test linear-seq
-  (assert-grid-equal
+(define-test linear
+  (assert-numerical-equal
    #+sbcl #m(1d0 2d0 3d0)
    #+clisp #(1d0 2d0 3d0)
    (progression :linear 1 3 :count 3))
-  (assert-grid-equal
-   #+sbcl #m(3d0 2d0 1d0)
-   #+clisp #(3d0 2d0 1d0)
-   (lseq 3 1 3)))
+  (assert-numerical-equal
+   #+sbcl #m(1d0 10d0 100d0)
+   #+clisp #(1d0 10d0 100d0)
+   (progression :geometric 1 100 :count 3)))
   
 
 (defgeneric progression (type begin end &key count &allow-other-keys)
@@ -54,16 +54,3 @@ TYPE determines the progression type:
 			    `((,*array-type* ,count) ,*float-type*))))
 	(setf (gref grid (- count 1)) end)
 	grid))))
-
-(define-test geom-seq
-  (assert-grid-equal
-   #+sbcl #m(1d0 2d0 4d0 8d0)
-   #+clisp #(1d0 2d0 4d0 8d0)
-   (geom-seq 1 8 4))
-  (assert-grid-equal
-   #+sbcl #m(8d0 4d0 2d0 1d0)
-   #+clisp #(8d0 4d0 2d0 1d0)
-   (geom-seq 8 1 4)))
-
-(defun geom-seq (begin end &optional (count 51))
-)

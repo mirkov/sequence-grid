@@ -1,43 +1,57 @@
-#+title: ~grid-sequences~ package
+#+title: ~sequence-grids~ package
 
-*Introduction
+* Introduction
 
-The functions in this package create 1-dimensional grids holding
-sequences of numbers as specified by some mathematical rules.
+  Functions in this package create 1-dimensional grids holding
+  sequences of numbers as specified by some mathematical rules.  The
+  functions are a thin veneer over Liam Healy's ~grid~ package.
+
+  There are two main sequence types:
+  - sequences of evenly spaced integers
+  - sequences of real numbers
+    
+    
+  The integer sequences can store integers as bytes, integers, and
+  floats.
+
+  The real number sequences always store the numbers as floats.
 
 * ~grid-sequences~ dictionary
 
-** ci-seq, sequences of consecutive integers
+** *ci-seq*, sequences of consecutive integers
 
 *** Syntax
-    - *ci-seq* kind count &key len type
+    - *ci-seq* kind count &key len step type
 
 *** Arguments and values
     - /kind/ - a keyword specifying the type of sequence
     - /count/ - a positive integer
     - /len/ - a symbol
     - /type/ - a symbol
+    - /step/ - a positive integer
 
 *** Description
 
     CI-SEQ generates a 1-D grid storing a sequence of consecutive
     integers, such as 0, 1, 2, ... COUNT-1.  COUNT determines the
-    number of integers.  KIND determines the type of number that the
+    number of integers.  STEP specifies the difference between
+    successive integers.  KIND determines the type of number that the
     grid will store.  KIND can be one of
-    - /:INTEGER/ Grid is of type integer.  
-    - /:COUNT/ Grid is of type signed byte
-    - /:NATURAL/ Grid of type signed byte.  The sequence starts at 1
-    - /:FLOAT/ Grid is of floating type.  /TYPE/ can be ~float~ or
-      ~double-float~
-    - /:COMPLEX/ Grid is of complex type.  /TYPE/ can be ~float~ or
-      ~double-float~
+    - /:CONSTANT/ All grid elements store the same integer
+    - /:INTEGER/ Grid is of type integer storing values 0, 1, etc 
+    - /:COUNT/ Grid is of type *signed* byte storing values 0, 1, etc
+    - /:NATURAL/ Grid of type signed byte.  storing values 1, 2, etc
+    - /:FLOAT/ Grid is of floating type storing values 0, 1, .  /TYPE/
+      can be ~float~ or ~double-float~
+    - /:COMPLEX/ Grid is of complex type storing values 0, 1, .
+      /TYPE/ can be ~float~ or ~double-float~
 
 
     /ci-seq/ is a generic function with methods selected on /kind/.
     All of the methods use grid's /map-grid/.
 
 
-** progression, general sequences of numbers
+** *progression*, general sequences of numbers
 
 *** Syntax
     - *progression* type begin end &key count

@@ -1,3 +1,16 @@
+2012-09-28  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* sequence-grid.asd (#:sequence-grid): Renamed file and asdf system.
+
+	* integer-sequences.lisp (ci-seq): Added constant integer sequence
+	type
+	(ci-seq)<constant>: I set the default value of LEN to 1.
+	Otherwise I was getting coerce errors
+
+	* float-sequences.lisp: Added basic tests
+
+	* integer-sequences.lisp: Added basic tests
+
 2012-09-27  Mirko Vukovic  <mirko.vukovic@us.tel.com>
 
 	* setup.lisp (*integer-type*): Copied definition from the old and

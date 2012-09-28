@@ -1,10 +1,10 @@
-;;;; sequences.asd
+;;;; sequence-grid.asd
 
-(asdf:defsystem #:sequences
+(asdf:defsystem #:sequence-grid
   :serial t
   :description "Describe sequences here"
-  :author "Your Name <your.name@example.com>"
-  :license "Specify license here"
+  :author "Mirko Vukovic <mirko.vukovic@gmail.com>"
+  :license "Not for redistribution"
   :depends-on (#:alexandria
                #:map-grid-utils
                #:lisp-unit)
