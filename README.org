@@ -1,0 +1,66 @@
+#+title: ~grid-sequences~ package
+
+*Introduction
+
+The functions in this package create 1-dimensional grids holding
+sequences of numbers as specified by some mathematical rules.
+
+* ~grid-sequences~ dictionary
+
+** ci-seq, sequences of consecutive integers
+
+*** Syntax
+    - *ci-seq* kind count &key len type
+
+*** Arguments and values
+    - /kind/ - a keyword specifying the type of sequence
+    - /count/ - a positive integer
+    - /len/ - a symbol
+    - /type/ - a symbol
+
+*** Description
+
+    CI-SEQ generates a 1-D grid storing a sequence of consecutive
+    integers, such as 0, 1, 2, ... COUNT-1.  COUNT determines the
+    number of integers.  KIND determines the type of number that the
+    grid will store.  KIND can be one of
+    - /:INTEGER/ Grid is of type integer.  
+    - /:COUNT/ Grid is of type signed byte
+    - /:NATURAL/ Grid of type signed byte.  The sequence starts at 1
+    - /:FLOAT/ Grid is of floating type.  /TYPE/ can be ~float~ or
+      ~double-float~
+    - /:COMPLEX/ Grid is of complex type.  /TYPE/ can be ~float~ or
+      ~double-float~
+
+
+    /ci-seq/ is a generic function with methods selected on /kind/.
+    All of the methods use grid's /map-grid/.
+
+
+** progression, general sequences of numbers
+
+*** Syntax
+    - *progression* type begin end &key count
+
+*** Arguments and values
+    - /type/ - a keyword
+    - /begin/ - a number
+    - /end/ - a number
+    - /count/ - a positive integer
+
+*** Description
+    PROGRESSION generates a sequence of numbers between BEGIN and END
+    in some kind of progression, such as linear or geometric
+    (exponential).
+
+    TYPE determines the progression type.  Allowed values for TYPE are
+    - :linear
+    - :geometric
+    - (:power, not implemented yet)
+    - (:logarithmic, not implemented yet)
+      
+
+* To-do
+  - Extend /ci-seq/ with the /step/ keyword to allow for sequences
+    such as 1 3 5
+
