@@ -1,0 +1,5 @@
+2012-09-27  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* setup.lisp (*integer-type*): Copied definition from the old and
+	obsolete mv-grid-utils package
+

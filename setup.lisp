@@ -16,6 +16,10 @@ Calls to the function are coerced to *float-type*
 
 Valid values are 'single-float or 'double-float")
 
+(defparameter *integer-type* '(unsigned-byte 32)
+  "Default integer byte length")
+
+
 
 (defconstant *v0*
   (make-grid `((,*array-type* 4) ,*float-type*)
