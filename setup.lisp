@@ -1,3 +1,5 @@
+
+
 (in-package :sequence-grid)
 
 
@@ -5,15 +7,15 @@
   "Default integer byte length")
 
 
-(defconstant *v0*
+(defconstant +v0+
   (make-grid `((,*default-grid-type* 4) ,*default-element-type*)
 	     :initial-contents '(0d0 1d0 2d0 3d0)))
 
-(defconstant *v1*
+(defconstant +v1+
   (make-grid `((,*default-grid-type* 4) ,*default-element-type*)
 	     :initial-contents '(10d0 11d0 12d0 13d0)))
 
-(defconstant *v2*
+(defconstant +v2+
   (make-grid `((,*default-grid-type* 3) ,*default-element-type*)
 	     :initial-contents '(0d0 1d0 2d0)))
 

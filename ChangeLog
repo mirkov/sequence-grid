@@ -1,5 +1,8 @@
 2012-10-09  Mirko Vukovic  <mirko.vukovic@us.tel.com>
 
+	* setup.lisp: Renamed constants *v0*, *v1*, and *v2* into +v0+,
+	+v1+, and +v2+
+
 	* integer-sequences.lisp (ci-seq): Changed keyword argument names
 	from LEN to BITS.  I eliminated TYPE keyword that was used for
 	float and complex kinds.  There, I use *default-element-type* to
