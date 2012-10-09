@@ -4,15 +4,16 @@
 
   Functions in this package create 1-dimensional grids holding
   sequences of numbers as specified by some mathematical rules.  The
-  functions are a thin veneer over Liam Healy's ~grid~ package.
+  functions are a thin veneer over Liam Healy's ~grid~ package from
+  his ~antik~ library.
 
   There are two main sequence types:
   - sequences of evenly spaced integers
   - sequences of real numbers
     
     
-  The integer sequences can store integers as bytes, integers, and
-  floats.
+  The integer sequences can store integers in various representations:
+   bytes, integers, and floats.
 
   The real number sequences always store the numbers as floats.
 
@@ -40,7 +41,7 @@
     - /:CONSTANT/ All grid elements store the same integer
     - /:INTEGER/ Grid is of type integer storing values 0, 1, etc 
     - /:COUNT/ Grid is of type *signed* byte storing values 0, 1, etc
-    - /:NATURAL/ Grid of type signed byte.  storing values 1, 2, etc
+    - /:NATURAL/ Grid of type signed byte storing values 1, 2, etc
     - /:FLOAT/ Grid is of floating type storing values 0, 1, .  /TYPE/
       can be ~float~ or ~double-float~
     - /:COMPLEX/ Grid is of complex type storing values 0, 1, .
