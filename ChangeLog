@@ -1,3 +1,32 @@
+2012-10-09  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* integer-sequences.lisp (ci-seq): Changed keyword argument names
+	from LEN to BITS.  I eliminated TYPE keyword that was used for
+	float and complex kinds.  There, I use *default-element-type* to
+	determine storage.
+
+	* sequence-grid-package-def.lisp (#:sequence-grid): Shadowing
+	iterate's ``rotate''.  It conflicts with antik's.  This may be an
+	internal antik issue.
+
+	* integer-sequences.lisp (ci-seq): For :float and :complex kinds,
+	I use *default-element-type* to specify the float type
+
+	* float-sequences.lisp (linear, progression): Renamed test
+	``linear'' into ``progression''.  I now test only for progression
+	contents using cl:array.  
+
+	* sequence-grid-package-def.lisp: (defpackage): removed explicit
+	dependency on :grid
+	(antik:make-user-package): Calling it with :sequence-grid to
+	install shadowing symbols
+
+	* setup.lisp: Using antik/grid *default-grid-type* and
+	*default-element-type* instead of *array-type* and *float-type*.
+	I renamed *integer-type* into *default-integer-type*.
+	* float-sequences.lisp: Same comment as for setup.lisp above.
+	* integer-sequences.lisp: Same comment as for setup.lisp above.
+
 2012-09-28  Mirko Vukovic  <mirko.vukovic@us.tel.com>
 
 	* sequence-grid.asd (#:sequence-grid): Renamed file and asdf system.

@@ -1,13 +1,13 @@
+
+
 (in-package :sequence-grid)
 
-(define-test linear
+(define-test progression
   (assert-numerical-equal
-   #+sbcl #m(1d0 2d0 3d0)
-   #+clisp #(1d0 2d0 3d0)
+   #(1d0 2d0 3d0)
    (progression :linear 1 3 :count 3))
   (assert-numerical-equal
-   #+sbcl #m(1d0 10d0 100d0)
-   #+clisp #(1d0 10d0 100d0)
+   #(1d0 10d0 100d0)
    (progression :geometric 1 100 :count 3)))
   
 
@@ -36,7 +36,7 @@ TYPE determines the progression type:
 					(+ (*  i scale)
 					   begin))
 			    :destination-specification
-			    `((,*array-type* ,count) ,*float-type*))))
+			    `((,*default-grid-type* ,count) ,*default-element-type*))))
 	(setf (gref grid (- count 1)) end)
 	grid)))
   (:method ((type (eql :geometric)) (begin number) (end number)
@@ -51,6 +51,6 @@ TYPE determines the progression type:
 					(prog1 value
 					  (setf value (* value rat))))
 			    :destination-specification
-			    `((,*array-type* ,count) ,*float-type*))))
+			    `((,*default-grid-type* ,count) ,*default-element-type*))))
 	(setf (gref grid (- count 1)) end)
 	grid))))
